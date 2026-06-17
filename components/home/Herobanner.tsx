@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Colors } from '@/constants/colors';
-import { FontSize, Radius, Spacing } from '@/constants/spacing';
+import { FontSize, Spacing } from '@/constants/spacing';
 
 interface HeroBannerProps {
   headline?: string;
@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: Spacing.xxxl,
     paddingHorizontal: Spacing.lg,
-    overflow: 'hidden',
   },
   textSide: {
     flex: 1,

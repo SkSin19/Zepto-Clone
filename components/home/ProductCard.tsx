@@ -1,9 +1,11 @@
+//cards under the trending near you title heading
+
 import { Ionicons } from '@expo/vector-icons';
 import { Image } from 'expo-image';
 import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Colors } from '@/constants/colors';
-import { FontSize, Radius, Spacing } from '@/constants/spacing';
+import { FontSize, Radius } from '@/constants/spacing';
 import { Product } from '@/types';
 
 interface ProductCardProps {
@@ -38,7 +40,7 @@ export function ProductCard({ product, onAdd }: ProductCardProps) {
           <Ionicons
             name={wishlisted ? 'heart' : 'heart-outline'}
             size={18}
-            color={wishlisted ? Colors.danger : Colors.textMuted}
+            color="#e03b3b"
           />
         </TouchableOpacity>
 
@@ -49,7 +51,6 @@ export function ProductCard({ product, onAdd }: ProductCardProps) {
           activeOpacity={0.85}
         >
           <Text style={styles.addButtonText}>ADD</Text>
-          <Ionicons name="add" size={14} color={Colors.primary} />
         </TouchableOpacity>
       </View>
 
@@ -90,6 +91,9 @@ const styles = StyleSheet.create({
   card: {
     width: CARD_WIDTH,
     backgroundColor: Colors.white,
+    borderRadius: Radius.md,
+    shadowColor: '#000',
+    padding: 8,
   },
   imageWrapper: {
     width: '100%',
@@ -107,17 +111,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 6,
     right: 6,
-    backgroundColor: Colors.white,
     borderRadius: 999,
     width: 28,
     height: 28,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.12,
-    shadowRadius: 3,
-    elevation: 2,
   },
   addButton: {
     position: 'absolute',
@@ -140,7 +138,7 @@ const styles = StyleSheet.create({
     borderColor: Colors.border,
   },
   addButtonText: {
-    color: Colors.primary,
+    color: "#e03b3b",
     fontSize: FontSize.sm,
     fontWeight: '800',
     letterSpacing: 0.5,

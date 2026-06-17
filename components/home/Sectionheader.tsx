@@ -32,12 +32,6 @@ export function SectionHeader({
           {title}
           {accentTitle ? <Text style={styles.accentTitle}> {accentTitle}</Text> : null}
         </Text>
-
-        {showSeeAll && (
-          <TouchableOpacity onPress={onSeeAll} activeOpacity={0.7}>
-            <Text style={styles.seeAll}>See all</Text>
-          </TouchableOpacity>
-        )}
       </View>
 
       {subtitle ? <Text style={styles.subtitle}>{subtitle}</Text> : null}
@@ -48,7 +42,8 @@ export function SectionHeader({
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: Spacing.lg,
-    marginBottom: Spacing.md,
+    marginBottom: Spacing.lg,
+    marginTop: Spacing.lg,
   },
   centered: {
     alignItems: 'center',
@@ -56,16 +51,16 @@ const styles = StyleSheet.create({
   topRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: "center"
   },
   title: {
-    fontSize: FontSize.xl,
-    fontWeight: '800',
+    fontSize: FontSize.xxl,
+    fontWeight: '600',
     color: Colors.textPrimary,
   },
   accentTitle: {
-    fontSize: FontSize.xl,
-    fontWeight: '800',
+    fontSize: FontSize.xxl,
+    fontWeight: '600',
     color: Colors.primary,
   },
   seeAll: {

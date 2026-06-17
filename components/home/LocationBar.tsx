@@ -1,9 +1,12 @@
 import { Ionicons } from '@expo/vector-icons';
+import LottieView from 'lottie-react-native';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Colors } from '@/constants/colors';
 import { FontSize, Spacing } from '@/constants/spacing';
 import { LocationInfo } from '@/types';
+
+const snowLottie = require('@/assets/lottie/snow-falling.json');
 
 interface LocationBarProps {
   location: LocationInfo;
@@ -38,6 +41,19 @@ export function LocationBar({ location, onPress, onAvatarPress }: LocationBarPro
       >
         <Ionicons name="person" size={18} color={Colors.white} />
       </TouchableOpacity>
+
+      {/* Snow overlay — purely decorative. pointerEvents="none" on the
+          wrapper means touches fall straight through to the content
+          above, even though this sits visually on top of everything. */}
+      <View style={styles.snowOverlay} pointerEvents="none">
+        <LottieView
+          source={snowLottie}
+          autoPlay
+          loop
+          resizeMode="cover"
+          style={styles.snowLottie}
+        />
+      </View>
     </View>
   );
 }
@@ -50,7 +66,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.lg,
     paddingTop: Spacing.md,
     paddingBottom: Spacing.xs,
-    // background is inherited from SafeAreaView (lavender)
+    backgroundColor: Colors.background,
   },
   leftSection: {
     flex: 1,
@@ -77,14 +93,25 @@ const styles = StyleSheet.create({
     fontSize: FontSize.sm,
     color: Colors.textSecondary,
     flex: 1,
-    paddingLeft: 2
+    paddingLeft: 2,
   },
   avatar: {
     width: 38,
     height: 38,
     borderRadius: 19,
-    backgroundColor: Colors.textPrimary,   // solid dark circle
+    backgroundColor: Colors.textPrimary, // solid dark circle
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  snowOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+  },
+  snowLottie: {
+    width: '100%',
+    height: '100%',
   },
 });

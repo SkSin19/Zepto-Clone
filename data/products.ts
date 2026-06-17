@@ -8,7 +8,7 @@ export const productSections: ProductSection[] = [
       {
         id: 'p1',
         name: 'Tomato',
-        imageUrl: 'https://picsum.photos/seed/tomato/300',
+        imageUrl: 'https://imgs.search.brave.com/XcBNWO4AmS54mCWY9bgdFhWuEWs1EWXqBKKQ81Upjxc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nbWFydC5jb20v/ZmlsZXMvMTYvSnVp/Y3ktRnJlc2gtVG9t/YXRvZXMtQnVuY2gt/UE5HLVRyYW5zcGFy/ZW50LUltYWdlLnBu/Zw',
         price: 28,
         mrp: 35,
         unit: '500 g',
@@ -18,7 +18,7 @@ export const productSections: ProductSection[] = [
       {
         id: 'p2',
         name: 'Onion',
-        imageUrl: 'https://picsum.photos/seed/onion/300',
+        imageUrl: 'https://imgs.search.brave.com/9uDWznBQmWl-RHCnwLQXUo-ajGN5ITEDES9c4IFLa9w/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNDgv/NzY3LzMyOS9zbWFs/bC90aHJlZS1vbmlv/bnMtb24tYS10cmFu/c3BhcmVudC1iYWNr/Z3JvdW5kLXBuZy5w/bmc',
         price: 32,
         mrp: 40,
         unit: '1 kg',
@@ -28,7 +28,7 @@ export const productSections: ProductSection[] = [
       {
         id: 'p3',
         name: 'Potato',
-        imageUrl: 'https://picsum.photos/seed/potato/300',
+        imageUrl: 'https://imgs.search.brave.com/eexvV-i1obo4uqTQoNjalhpUSJI2WZQWDdeLvlJwNAk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvcG90/YXRvLWJhbGxzLXBu/Zy1oZGQtbm1wdjhx/cWRhOWE5ZGtndC5w/bmc',
         price: 24,
         unit: '1 kg',
         deliveryTime: '10 mins',
@@ -36,7 +36,7 @@ export const productSections: ProductSection[] = [
       {
         id: 'p4',
         name: 'Capsicum',
-        imageUrl: 'https://picsum.photos/seed/capsicum/300',
+        imageUrl: 'https://imgs.search.brave.com/qPF7ymHUXPWvpGw-q0MvydrNRYpasWgw2krld1_Dah8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wbmcu/cG5ndHJlZS5jb20v/cG5nLXZlY3Rvci8y/MDI0MTEwMi9vdXJt/aWQvcG5ndHJlZS1j/b2xvdXJmdWwtY2Fw/c2ljdW1zLXNsaWNl/cy1vbi1pc29sYXRl/ZC1iYWNrZ3JvdW5k/LXBuZy1pbWFnZV8x/NDIzNjAxMy5wbmc',
         price: 45,
         mrp: 55,
         unit: '250 g',
@@ -47,12 +47,12 @@ export const productSections: ProductSection[] = [
   },
   {
     id: 'section-2',
-    title: 'Dairy, Bread & Eggs',
+    title: 'Dairy Products',
     products: [
       {
         id: 'p5',
         name: 'Amul Milk',
-        imageUrl: 'https://picsum.photos/seed/milk/300',
+        imageUrl: 'https://imgs.search.brave.com/LVt_fjTV9VIt4VG7NvayERDzPENIK9SCodyy5cgaGUw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNzIv/Mjc1LzMxNy9zbWFs/bC9hLXBsYWluLW1p/bGstY2FydG9uLXdp/dGgtYS1ibHVlLXRv/cC1mZWF0dXJpbmct/YS1ibGFuay1mcm9u/dC1mb3ItbGFiZWxp/bmctcG5nLnBuZw',
         price: 29,
         unit: '500 ml',
         deliveryTime: '8 mins',
@@ -60,7 +60,7 @@ export const productSections: ProductSection[] = [
       {
         id: 'p6',
         name: 'Brown Bread',
-        imageUrl: 'https://picsum.photos/seed/bread/300',
+        imageUrl: 'https://imgs.search.brave.com/vcN9SIdPMNrhTTYKKmCb5a0IOZePMUFNfk2q3yZGTsc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNTQv/MTIzLzAxMi9zbWFs/bC9mcmVzaGx5LWJh/a2VkLWxvYWYtb2Yt/YnJvd24tYnJlYWQt/d2l0aC1hLWdvbGRl/bi1vYXQtdG9wcGlu/Zy1zbGljZWQtYW5k/LXJlYWR5LXRvLWVu/am95LXBuZy5wbmc',
         price: 45,
         mrp: 50,
         unit: '400 g',
@@ -70,7 +70,7 @@ export const productSections: ProductSection[] = [
       {
         id: 'p7',
         name: 'Farm Eggs',
-        imageUrl: 'https://picsum.photos/seed/eggs/300',
+        imageUrl: 'https://imgs.search.brave.com/KsnqlOECmQ7lf54oLpTL3B1wAEeuArMWniDLV9dW-Eg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNjAv/MDA2Lzc5MC9zbWFs/bC9mcmVzaC1icm93/bi1hbmQtd2hpdGUt/ZWdncy1pbi13b29k/ZW4tY3JhdGUtZm9y/LWZhcm0tb3Ita2l0/Y2hlbi11c2UtcG5n/LnBuZw',
         price: 72,
         unit: '6 pcs',
         deliveryTime: '9 mins',
@@ -78,7 +78,7 @@ export const productSections: ProductSection[] = [
       {
         id: 'p8',
         name: 'Paneer',
-        imageUrl: 'https://picsum.photos/seed/paneer/300',
+        imageUrl: 'https://imgs.search.brave.com/23vqoydv86CsD4XQkzS1xD_6kPFgaVvsWs1JY5st984/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yb3Nl/cG5nLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wOS9z/MTE3MjhfcGFuZWVy/X2lzb2xhdGVkX29u/X3doaXRlX2JhY2tn/cm91bmRfNDJkODBj/MzYtNjNkYS00NGEy/LTkyYzEtZTI0NjA3/ZTRlM2FhXzEtcGhv/dG9yb29tLnBuZw',
         price: 89,
         mrp: 99,
         unit: '200 g',
@@ -94,7 +94,7 @@ export const productSections: ProductSection[] = [
       {
         id: 'p9',
         name: 'Potato Chips',
-        imageUrl: 'https://picsum.photos/seed/chips/300',
+        imageUrl: 'https://imgs.search.brave.com/fLzKuxMDoOFEW-fXoXsMdY1UGY37ehGVusxiQuSGkVc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wdXJl/cG5nLmNvbS9wdWJs/aWMvdXBsb2Fkcy90/aHVtYm5haWwvL3B1/cmVwbmcuY29tLWxh/eXMtY2xhc3NpYy1w/b3RhdG8tY2hpcHMt/cGFja2V0Zm9vZC1s/YXlzLXBvdGF0by1j/aGlwcy05NDE1MjQ2/MzcxODZpMW1hZi5w/bmc',
         price: 20,
         unit: '52 g',
         deliveryTime: '11 mins',
@@ -102,7 +102,7 @@ export const productSections: ProductSection[] = [
       {
         id: 'p10',
         name: 'Choco Cookies',
-        imageUrl: 'https://picsum.photos/seed/cookies/300',
+        imageUrl: 'https://imgs.search.brave.com/1SRNjTIRHJnXUMN59niYHfx5BZZVaNyiXY_JeB8xCPg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNTMv/MzQ3LzUxMS9zbWFs/bC9zdGFjay1vZi1j/aG9jb2xhdGUtY29v/a2llcy1pc29sYXRl/ZC1vbi10cmFuc3Bh/cmVudC1iYWNrZ3Jv/dW5kLXBuZy5wbmc',
         price: 60,
         mrp: 75,
         unit: '300 g',
@@ -112,7 +112,7 @@ export const productSections: ProductSection[] = [
       {
         id: 'p11',
         name: 'Namkeen Mix',
-        imageUrl: 'https://picsum.photos/seed/namkeen/300',
+        imageUrl: 'https://imgs.search.brave.com/_nrvongHAoDnMSfV5R7ZVX-Pz12Mdygdq-ZibSbnUT8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNTAv/Nzc5LzMyOC9zbWFs/bC9ibGFjay1zbmFj/ay1iYWctd2l0aC1n/b2xkZW4tcG90YXRv/LWNoaXBzLW9uLXRy/YW5zcGFyZW50LWJh/Y2tncm91bmQtcG5n/LnBuZw',
         price: 55,
         unit: '200 g',
         deliveryTime: '9 mins',
@@ -120,7 +120,7 @@ export const productSections: ProductSection[] = [
       {
         id: 'p12',
         name: 'Popcorn',
-        imageUrl: 'https://picsum.photos/seed/popcorn/300',
+        imageUrl: 'https://imgs.search.brave.com/KO5D_d-TAJnCRAJxAuEeCbqnEAoZdCcpS__7isgmydU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4z/ZC5pY29uc2NvdXQu/Y29tLzNkL3ByZW1p/dW0vdGh1bWIvcG9w/Y29ybi0zZC1pbGx1/c3RyYXRpb24tZG93/bmxvYWQtaW4tcG5n/LWJsZW5kLWZieC1n/bHRmLWZpbGUtZm9y/bWF0cy0tY29ybi1z/bmFjay1jaW5lbWEt/bW92aWUtcGFjay1l/bnRlcnRhaW5tZW50/LWlsbHVzdHJhdGlv/bnMtNDYzNTc1Ni5w/bmc_Zj13ZWJw',
         price: 40,
         mrp: 50,
         unit: '150 g',

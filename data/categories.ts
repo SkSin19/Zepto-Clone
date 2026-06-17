@@ -12,14 +12,14 @@ export const tabCategories: Category[] = [
 
 // Grid categories (Grocery & Kitchen section)
 export const groceryCategories: Category[] = [
-  { id: 'g1', name: 'Fruits &\nVegetables', iconUrl: 'https://picsum.photos/seed/fruitsvegs/200' },
-  { id: 'g2', name: 'Dairy, Bread\n& Eggs', iconUrl: 'https://picsum.photos/seed/dairy/200' },
-  { id: 'g3', name: 'Atta, Rice,\nOil & Dals', iconUrl: 'https://picsum.photos/seed/staples/200' },
-  { id: 'g4', name: 'Meat, Fish\n& Eggs', iconUrl: 'https://picsum.photos/seed/meat/200' },
-  { id: 'g5', name: 'Masala &\nDry Fruits', iconUrl: 'https://picsum.photos/seed/masala/200' },
-  { id: 'g6', name: 'Breakfast\n& Sauces', iconUrl: 'https://picsum.photos/seed/breakfast/200' },
-  { id: 'g7', name: 'Packaged\nFood', iconUrl: 'https://picsum.photos/seed/packaged/200' },
-  { id: 'g8', name: 'Snacks &\nMunchies', iconUrl: 'https://picsum.photos/seed/snacks2/200' },
+  { id: 'g1', name: 'Fruits &\nVegetables', iconUrl: 'https://imgs.search.brave.com/PFQV9UMQoazlkMzX70rFmFvrvghZaShhBDdFXtsO-L4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNDMv/NjU5LzczMy9zbWFs/bC9taXgtZnJ1aXRz/LW9uLWlzb2xhdGVk/LWJhY2tncm91bmQt/cG5nLnBuZw' },
+  { id: 'g2', name: 'Dairy, Bread\n& Eggs', iconUrl: 'https://imgs.search.brave.com/OBty26lU2Fkwf8_S4-6-wQE_GgdZV918PcmrynFRIfE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNTcv/NjQ2Lzc3OS9zbWFs/bC92YXJpb3VzLWRh/aXJ5LXByb2R1Y3Rz/LWluY2x1ZGluZy1t/aWxrLWNoZWVzZS1h/bmQtYnV0dGVyLXBu/Zy5wbmc' },
+  { id: 'g3', name: 'Atta, Rice,\nOil & Dals', iconUrl: 'https://imgs.search.brave.com/bGB9unjs5VpkDN5l4JoxNawzwJVmPGcmSpIgyDRCIbU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNTIv/MzI2LzEyMS9zbWFs/bC9hLWJhZy1vZi1y/aWNlLXBuZy5wbmc' },
+  { id: 'g4', name: 'Meat, Fish\n& Eggs', iconUrl: 'https://imgs.search.brave.com/Pbni0vYhg04XcQVoNJsb9O9_mLrIk3BWwsyT49qDavA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMzIv/MzI1LzI5Ni9zbWFs/bC9yYXctY2hpY2tl/bi1tZWF0LWlzb2xh/dGVkLW9uLXRyYW5z/cGFyZW50LWJhY2tn/cm91bmQtZmlsZS1j/dXQtb3V0LWFpLWdl/bmVyYXRlZC1wbmcu/cG5n' },
+  { id: 'g5', name: 'Masala &\nDry Fruits', iconUrl: 'https://imgs.search.brave.com/XD8_YYjRL4lsG28dXmj3SHrLHrmldmz9CWFFULQwztQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvYXNz/b3J0ZWQtZHJ5LWZy/dWl0cy1jb2xsZWN0/aW9uLXpmbDNrNnlp/M2Rhb3pxcTEtMi5w/bmc' },
+  { id: 'g6', name: 'Breakfast\n& Sauces', iconUrl: 'https://imgs.search.brave.com/gQ-XFQQqMcAQCSrInERPmLZJt8fliFCkq5J0g6VugG8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nYXJ0cy5jb20v/ZmlsZXMvMTEvUmVk/LVNhdWNlLVBORy1E/b3dubG9hZC1JbWFn/ZS5wbmc' },
+  { id: 'g7', name: 'Packaged\nFood', iconUrl: 'https://imgs.search.brave.com/8Uv9C8-uBqmE47Ogf4kP7H3ZYdRc6bFCzE3EZunBjZg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNTcv/ODkyLzk4OC9zbWFs/bC9leHRyYW9yZGlu/YXJ5LXRyYWRpdGlv/bmFsLWJpb2RlZ3Jh/ZGFibGUtZm9vZC1j/b250YWluZXItd2l0/aC1jbGVhci1saWQt/cHJlbWl1bS1mcmVl/LXBuZy5wbmc' },
+  { id: 'g8', name: 'Snacks &\nMunchies', iconUrl: 'https://imgs.search.brave.com/0ALfIn631cdMeEcLtaSJZHS3gCIc80nRSllBMLBhJQs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9maWxl/LmFpcXVpY2tkcmF3/LmNvbS9pbWdjb21w/cmVzc2VkL2ltZy9j/b21wcmVzc2VkX2Nk/YTFlYWRhODhlMzA5/M2QyZDM2Zjk3YmI0/M2E3YjViLndlYnA' },
 ];
 
 // Keep the original for backward compat (used by CategoryRow if still referenced)

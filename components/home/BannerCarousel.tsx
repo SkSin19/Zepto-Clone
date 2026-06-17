@@ -1,3 +1,5 @@
+//banners under the everyday low prices section
+
 import { Image } from 'expo-image';
 import React, { useState } from 'react';
 import { Dimensions, FlatList, StyleSheet, Text, View } from 'react-native';
@@ -8,7 +10,7 @@ import { Banner } from '@/types';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const CARD_WIDTH = SCREEN_WIDTH - Spacing.lg * 2;
-const CARD_HEIGHT = 140;
+const CARD_HEIGHT = 200;
 
 interface BannerCarouselProps {
   banners: Banner[];
@@ -36,6 +38,7 @@ export function BannerCarousel({ banners }: BannerCarouselProps) {
         data={banners}
         horizontal
         pagingEnabled
+        snapToAlignment='center'
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.id}
         onScrollBeginDrag={onScrollBeginDrag}
@@ -89,7 +92,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: '100%',
     height: '100%',
-    opacity: 0.3,
+    opacity: 1,
   },
   textOverlay: {
     padding: Spacing.lg,

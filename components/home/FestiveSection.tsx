@@ -1,48 +1,74 @@
+// the section witht the train animation
+
 import LottieView from 'lottie-react-native';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
+import { Animated, LayoutChangeEvent, Platform, StyleSheet, Text, View } from 'react-native';
 import { Colors } from '@/constants/colors';
-import { FontSize, Radius, Spacing } from '@/constants/spacing';
+import { FontSize, Spacing } from '@/constants/spacing';
 
 interface FestiveSectionProps {
-  /**
-   * Path to the Lottie JSON, e.g. require('@/assets/lottie/train.json').
-   * Left undefined for now — drop your real file in
-   * assets/lottie/train.json and pass it in from HomeScreen once ready.
-   */
-  lottieSource?: string;
-  heading?: string;
-  subheading?: string;
+  lottieSource?: any;
 }
 
-const SCENE_HEIGHT = 180;
+const FALLBACK_ASPECT_RATIO = 2.4;
 
-export function FestiveSection({
-  lottieSource,
-  heading = '🎄 Christmas is Here!',
-  subheading = 'Festive deals just for you',
-}: FestiveSectionProps) {
+const TOP_CROP_RATIO = 0.35;
+
+export function FestiveSection({ lottieSource }: FestiveSectionProps) {
+  const [sceneWidth, setSceneWidth] = useState(0);
+  const float = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    const loop = Animated.loop(
+      Animated.sequence([
+        Animated.timing(float, { toValue: 1, duration: 2400, useNativeDriver: true }),
+        Animated.timing(float, { toValue: 0, duration: 2400, useNativeDriver: true }),
+      ])
+    );
+    loop.start();
+    return () => loop.stop();
+  }, [float]);
+
+  const translateY = float.interpolate({ inputRange: [0, 1], outputRange: [0, -7] });
+  const glowOpacity = float.interpolate({ inputRange: [0, 1], outputRange: [0.75, 1] });
+
+  const aspectRatio =
+    lottieSource?.w && lottieSource?.h ? lottieSource.w / lottieSource.h : FALLBACK_ASPECT_RATIO;
+
+  const fullHeight = sceneWidth ? sceneWidth / aspectRatio : 0;
+  const visibleHeight = fullHeight * (1 - TOP_CROP_RATIO);
+
+  const handleLayout = (e: LayoutChangeEvent) => {
+    setSceneWidth(e.nativeEvent.layout.width);
+  };
+
   return (
     <View style={styles.container}>
-      <View style={styles.headingWrapper}>
-        <View style={styles.sparkleLine} />
-        <Text style={styles.heading}>{heading}</Text>
-        <View style={styles.sparkleLine} />
-      </View>
-      <Text style={styles.subheading}>{subheading}</Text>
+      <Animated.Text
+        style={[styles.merryChristmas, { transform: [{ translateY }], opacity: glowOpacity }]}
+      >
+        Merry Christmas
+      </Animated.Text>
 
-      <View style={styles.sceneWrapper}>
-        {lottieSource ? (
-          <LottieView source={lottieSource} autoPlay loop style={styles.lottie} resizeMode="cover" />
+      <View
+        style={[styles.sceneWrapper, { height: visibleHeight }]}
+        onLayout={handleLayout}
+      >
+        {lottieSource && fullHeight > 0 ? (
+          <LottieView
+            source={lottieSource}
+            autoPlay
+            loop
+            style={{
+              width: sceneWidth,
+              height: fullHeight,
+              marginTop: -fullHeight * TOP_CROP_RATIO,
+            }}
+          />
         ) : (
-          // Placeholder shown until the real train.json is dropped in.
-          // Swap this whole branch out once lottieSource is provided —
-          // FestiveSection's public API already supports it, no other
-          // file needs to change.
-          <View style={styles.placeholder}>
+          <View style={[styles.placeholder, { height: visibleHeight }]}>
             <Text style={styles.placeholderEmoji}>🚂</Text>
-            <Text style={styles.placeholderText}>Train animation goes here</Text>
-            <Text style={styles.placeholderSubtext}>
+            <Text style={styles.placeholderText}>
               Drop your Lottie file at assets/lottie/train.json
             </Text>
           </View>
@@ -54,52 +80,29 @@ export function FestiveSection({
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: Spacing.xl,
-    marginHorizontal: Spacing.lg,
-    backgroundColor: Colors.festiveCream,
-    borderRadius: Radius.lg,
-    paddingVertical: Spacing.lg,
-    paddingHorizontal: Spacing.md,
-    borderWidth: 1,
-    borderColor: '#F0E0B8',
-  },
-  headingWrapper: {
-    flexDirection: 'row',
+    marginTop: Spacing.xxxl,
+    marginBottom: Spacing.xl,
+    width: '100%',
     alignItems: 'center',
-    justifyContent: 'center',
-    gap: Spacing.sm,
   },
-  sparkleLine: {
-    flex: 1,
-    height: 1,
-    backgroundColor: Colors.festiveGold,
-    opacity: 0.5,
-  },
-  heading: {
-    fontSize: FontSize.xl,
+  merryChristmas: {
+    fontSize: FontSize.xl + 16,
+    lineHeight: FontSize.xl + 16,
     fontWeight: '800',
-    color: Colors.festiveRed,
-    textAlign: 'center',
-  },
-  subheading: {
-    fontSize: FontSize.sm,
-    color: Colors.textSecondary,
-    textAlign: 'center',
-    marginTop: Spacing.xs,
+    fontFamily: Platform.select({ ios: 'Georgia', android: 'serif', default: 'serif' }),
+    color: '#46acff',
+    letterSpacing: 3,
+    marginBottom: -6,
+    includeFontPadding: false,
+    textShadowColor: 'rgba(186, 224, 255, 0.95)',
+    textShadowOffset: { width: 0, height: 0 },
+    textShadowRadius: 16,
   },
   sceneWrapper: {
-    marginTop: Spacing.lg,
-    height: SCENE_HEIGHT,
-    borderRadius: Radius.md,
-    overflow: 'hidden',
-    backgroundColor: Colors.white,
-  },
-  lottie: {
     width: '100%',
-    height: '100%',
+    overflow: 'hidden',
   },
   placeholder: {
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     gap: 4,
@@ -108,12 +111,7 @@ const styles = StyleSheet.create({
     fontSize: 36,
   },
   placeholderText: {
-    fontSize: FontSize.sm,
-    fontWeight: '600',
-    color: Colors.textSecondary,
-  },
-  placeholderSubtext: {
     fontSize: FontSize.xs,
-    color: Colors.textMuted,
+    color: Colors.textSecondary,
   },
 });

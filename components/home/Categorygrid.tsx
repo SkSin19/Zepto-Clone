@@ -53,10 +53,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.lg,
   },
   sectionTitle: {
-    fontSize: FontSize.xl,
-    fontWeight: '800',
+    fontSize: FontSize.xxl,
+    fontWeight: '600',
     color: Colors.textPrimary,
-    marginBottom: Spacing.md,
+    marginBottom: Spacing.md + 5,
+    alignSelf: 'center',
   },
   grid: {
     flexDirection: 'row',

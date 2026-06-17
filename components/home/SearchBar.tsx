@@ -17,7 +17,7 @@ export function SearchBar({
   placeholder = 'Search for "Milk"',
   onPress,
   promoPillLabel = 'Pet\nStore',
-  promoPillImageUrl,
+  promoPillImageUrl = "https://imgs.search.brave.com/DxT1PO_L-jQkFTa6_EO1R6It5HTHZD70vrMftqiR5q4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wbmcu/cG5ndHJlZS5jb20v/cG5nLXZlY3Rvci8y/MDI1MTIyMi9vdXJt/aWQvcG5ndHJlZS1w/ZXQtZm9vZC1ib3ds/LWJhZy1jYW5zLWFu/ZC1ib3gtb24td2hp/dGUtcGxhdGZvcm0t/cG5nLWltYWdlXzE4/MjkzMzg5LndlYnA",
   onPromoPillPress,
 }: SearchBarProps) {
   return (
@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.lg,
     paddingVertical: Spacing.sm,
     gap: Spacing.sm,
+    backgroundColor: Colors.background,
   },
   inputContainer: {
     flex: 1,
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   pillLabel: {
-    fontSize: FontSize.xs,
+    fontSize: FontSize.md,
     fontWeight: '800',
     color: Colors.primary,
     lineHeight: 14,

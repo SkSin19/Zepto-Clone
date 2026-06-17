@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.lg,
     gap: 0,
     paddingBottom: 0,
+    backgroundColor: Colors.background,
   },
   tab: {
     alignItems: 'center',
