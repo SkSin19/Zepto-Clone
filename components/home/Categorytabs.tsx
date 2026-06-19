@@ -1,29 +1,44 @@
 //the category selection below the search bar
 
-import { Image } from 'expo-image';
-import React, { useState } from 'react';
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { Colors } from '@/constants/colors';
-import { FontSize, Spacing } from '@/constants/spacing';
-import { Category } from '@/types';
+import { Image } from "expo-image";
+import React, { useState } from "react";
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { Colors } from "@/constants/colors";
+import { FontSize, Spacing } from "@/constants/spacing";
+import { Category } from "@/types";
+import Svg, { Path } from "react-native-svg";
 
 interface CategoryTabsProps {
   categories: Category[];
   onSelectCategory?: (category: Category | null) => void;
+  themeColor?: string; // Optional theme color for the active tab
 }
 
-const ALL_TAB = { id: 'all', name: 'All', iconUrl: '', emoji: '🛍️' };
+const ALL_TAB = { id: "all", name: "All", iconUrl: "", emoji: "🛍️" };
 
 type Tab = typeof ALL_TAB;
 
-export function CategoryTabs({ categories, onSelectCategory }: CategoryTabsProps) {
-  const [activeId, setActiveId] = useState<string>('all');
+export function CategoryTabs({
+  categories,
+  onSelectCategory,
+  themeColor,
+}: CategoryTabsProps) {
+  const [activeId, setActiveId] = useState<string>("all");
 
-  const tabs: Tab[] = [ALL_TAB, ...categories.map((c) => ({ ...c, emoji: undefined as any }))];
+  const tabs: Tab[] = [
+    ALL_TAB,
+    ...categories.map((c) => ({ ...c, emoji: undefined as any })),
+  ];
 
   const handlePress = (tab: Tab) => {
     setActiveId(tab.id);
-    onSelectCategory?.(tab.id === 'all' ? null : (tab as any));
+    onSelectCategory?.(tab.id === "all" ? null : (tab as any));
   };
 
   return (
@@ -36,14 +51,53 @@ export function CategoryTabs({ categories, onSelectCategory }: CategoryTabsProps
       contentContainerStyle={styles.listContent}
       renderItem={({ item }) => {
         const isActive = item.id === activeId;
+
         return (
           <TouchableOpacity
             style={styles.tab}
             onPress={() => handlePress(item)}
-            activeOpacity={0.7}
+            activeOpacity={0.8}
           >
-            {/* Icon bubble — white card on lavender */}
-            <View style={[styles.iconWrapper, isActive && styles.iconWrapperActive]}>
+            {isActive && (
+              <Svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 100 100"
+                style={StyleSheet.absoluteFillObject}
+              >
+                <Path
+                  d="
+                  M 12 12
+                  Q 12 0 24 0
+                  L 76 0
+                  Q 88 0 88 12
+                  L 100 100
+                  L 0 100
+                  Z
+                "
+                  fill="rgba(1,46,73,0.85)"
+                />
+
+                <Path
+                  d="
+                M 12 12
+                Q 12 0 24 0
+                L 76 0
+                Q 88 0 88 12
+                L 100 100
+              "
+                  fill="none"
+                  stroke="rgba(255,255,255,0.9)"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </Svg>
+            )}
+
+            <View
+              style={[styles.iconWrapper, isActive && styles.iconWrapperActive]}
+            >
               {item.iconUrl ? (
                 <Image
                   source={{ uri: item.iconUrl }}
@@ -52,16 +106,13 @@ export function CategoryTabs({ categories, onSelectCategory }: CategoryTabsProps
                   transition={150}
                 />
               ) : (
-                <Text style={styles.emoji}>{(item as any).emoji ?? '🛍️'}</Text>
+                <Text style={styles.emoji}>{(item as any).emoji ?? "🛍️"}</Text>
               )}
             </View>
 
             <Text style={[styles.label, isActive && styles.labelActive]}>
               {item.name}
             </Text>
-
-            {/* Active indicator: solid purple underline */}
-            {isActive && <View style={styles.underline} />}
           </TouchableOpacity>
         );
       }}
@@ -73,59 +124,52 @@ const styles = StyleSheet.create({
   listContent: {
     paddingHorizontal: Spacing.lg,
     gap: 0,
-    paddingBottom: 0,
-    backgroundColor: Colors.background,
+    marginBottom: -Spacing.sm,
+    backgroundColor: Colors.christmasBg,
   },
   tab: {
-    alignItems: 'center',
-    paddingHorizontal: 10,
-    paddingTop: Spacing.md,
-    paddingBottom: Spacing.sm,
-    minWidth: 58,
-    position: 'relative',
+    alignItems: "center",
+    justifyContent: "center",
+    width: 90,
+    height: 105,
+    marginHorizontal: 4,
+    position: "relative",
+
+    borderTopLeftRadius: 16,
+    borderTopRightRadius: 16,
+    overflow: "hidden", // important
   },
+
   iconWrapper: {
-    width: 50,
-    height: 50,
-    borderRadius: 14,
-    backgroundColor: Colors.surface,   // white bubble on lavender
-    alignItems: 'center',
-    justifyContent: 'center',
-    overflow: 'hidden',
-    shadowColor: Colors.primary,
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.08,
-    shadowRadius: 3,
-    elevation: 1,
+    width: 48,
+    height: 48,
+    borderRadius: 12,
+    backgroundColor: Colors.surface,
+    alignItems: "center",
+    justifyContent: "center",
+    overflow: "hidden",
   },
+
   iconWrapperActive: {
-    backgroundColor: Colors.primary,   // solid purple when active
+    backgroundColor: "transparent",
   },
-  icon: {
-    width: '100%',
-    height: '100%',
-  },
-  emoji: {
-    fontSize: 24,
-  },
+
   label: {
     fontSize: FontSize.xs,
     color: Colors.textSecondary,
-    marginTop: 5,
-    fontWeight: '500',
+    marginTop: 6,
+    fontWeight: "500",
   },
+
   labelActive: {
-    color: Colors.primary,
-    fontWeight: '700',
+    color: "#ffffff",
+    fontWeight: "700",
   },
-  underline: {
-    position: 'absolute',
-    bottom: 0,
-    left: 2,
-    right: 2,
-    height: 4,
-    borderTopLeftRadius: 5,
-    borderTopRightRadius: 5,
-    backgroundColor: "#000000",
+  icon: {
+    width: "100%",
+    height: "100%",
+  },
+  emoji: {
+    fontSize: 24,
   },
 });

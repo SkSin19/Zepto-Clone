@@ -21,7 +21,7 @@ export function LocationBar({ location, onPress, onAvatarPress }: LocationBarPro
       <TouchableOpacity style={styles.leftSection} onPress={onPress} activeOpacity={0.7}>
         {/* ⚡ ETA headline */}
         <View style={styles.etaRow}>
-          <Ionicons name="flash" size={17} color={Colors.textPrimary} />
+          <Ionicons name="flash" size={17} color="#ffffff" />
           <Text style={styles.etaText}>{location.etaMinutes} minutes</Text>
         </View>
         {/* Address + chevron */}
@@ -29,7 +29,7 @@ export function LocationBar({ location, onPress, onAvatarPress }: LocationBarPro
           <Text style={styles.address} numberOfLines={1}>
             {location.label} - {location.address}
           </Text>
-          <Ionicons name="chevron-down" size={13} color={Colors.textSecondary} />
+          <Ionicons name="chevron-down" size={13} color="#ffffff" />
         </View>
       </TouchableOpacity>
 
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.lg,
     paddingTop: Spacing.md,
     paddingBottom: Spacing.xs,
-    backgroundColor: Colors.background,
+    backgroundColor: Colors.christmasBg,
   },
   leftSection: {
     flex: 1,
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   etaText: {
     fontSize: FontSize.xxl,
     fontWeight: '800',
-    color: Colors.textPrimary,
+    color: "#ffffff",
     letterSpacing: -0.3,
   },
   addressRow: {
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   },
   address: {
     fontSize: FontSize.sm,
-    color: Colors.textSecondary,
+    color: "#ffffff",
     flex: 1,
     paddingLeft: 2,
   },
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     width: 38,
     height: 38,
     borderRadius: 19,
-    backgroundColor: Colors.textPrimary, // solid dark circle
+    backgroundColor: "#808080", // solid dark circle
     alignItems: 'center',
     justifyContent: 'center',
   },

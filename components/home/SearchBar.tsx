@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.lg,
     paddingVertical: Spacing.sm,
     gap: Spacing.sm,
-    backgroundColor: Colors.background,
+    backgroundColor: Colors.christmasBg,
   },
   inputContainer: {
     flex: 1,

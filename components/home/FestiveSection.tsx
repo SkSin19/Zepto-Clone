@@ -47,7 +47,7 @@ export function FestiveSection({ lottieSource }: FestiveSectionProps) {
       <Animated.Text
         style={[styles.merryChristmas, { transform: [{ translateY }], opacity: glowOpacity }]}
       >
-        Merry Christmas
+        Now faster than ever
       </Animated.Text>
 
       <View

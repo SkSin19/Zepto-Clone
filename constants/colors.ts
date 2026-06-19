@@ -4,6 +4,11 @@ export const Colors = {
   primaryDark: '#5C0FCB',    // pressed / deep states
   primaryLight: '#EDE8FB',   // lavender — used as APP BACKGROUND + banner bg
 
+
+  //festives
+
+  christmasBg: '#080A2D',  // Christmas festive banner bg (light blue)
+
   // ── Semantic ──────────────────────────────────────────────────────────────
   secondary: '#FFC300',      // yellow accent (discount badges)
   success: '#0C831F',        // delivery-time green (price badge bg)

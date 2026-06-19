@@ -16,6 +16,9 @@ import { banners } from '@/data/banners';
 import { groceryCategories, tabCategories } from '@/data/categories';
 import { productSections } from '@/data/products';
 import { Product } from '@/types';
+import OccasionBannerAnimated from '@/components/festive-banners/OccasionBannerAnimated';
+import { occasionOffersChristmas } from '@/data/occasion-offers';
+
 
 // ─── Mock data ─────────────────────────────────────────────────────────────────
 const currentLocation = {
@@ -23,6 +26,8 @@ const currentLocation = {
   address: 'Mulayam Nagar, Luck...',
   etaMinutes: 5,
 };
+
+const occasionOffers = occasionOffersChristmas.map((offer) => offer.offer);
 
 // Drop your real Lottie file at assets/lottie/train.json and uncomment:
 const trainLottie = require('@/assets/lottie/train.json');
@@ -45,10 +50,20 @@ export default function HomeScreen() {
         contentContainerStyle={styles.scrollContent}
       >
         {/* 1. Category tab strip (All / Fresh / Electronics …) */}
-        <CategoryTabs categories={tabCategories} />
+        <CategoryTabs categories={tabCategories} themeColor='#00243a'/>
 
-        {/* Divider */}
-        <View style={styles.divider} />
+        {/* Christmas festive banner section */}
+        <OccasionBannerAnimated
+          occasion="Christmas"
+          bannerImage={require('@/assets/occasions/christmas/christmas_bg_banner.png')}
+          centerAnimation={require('@/assets/lottie/santa_hide.json')}
+          offers={occasionOffers}
+          offerCardColor="#79ceff"
+          occasionThemeColor="#37b6ff"
+          occasionText1="Merry"
+          occasionText2=" Christmas"
+          tagLine="10% CASHBACK"
+        />
 
         {/* 2. Hero banner ("EVERYDAY LOW PRICES!") */}
         <HeroBanner />
